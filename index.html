@@ -1,0 +1,1329 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rodolfo Silva | Cloud Support Engineer & IT Specialist</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              aws: {
+                orange: '#FF9900',
+                dark: '#232F3E',
+                blue: '#146EB4',
+                lightBg: '#F8FAFC',
+              },
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['Fira Code', 'monospace'],
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      .code-font {
+        font-family: 'Fira Code', monospace;
+      }
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0f172a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #334155;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #ff9900;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-slate-900 text-slate-100 antialiased selection:bg-amber-500 selection:text-slate-900 min-h-screen flex flex-col justify-between"
+  >
+    <!-- Top Navigation Header -->
+    <header
+      class="sticky top-0 z-50 backdrop-blur-md bg-slate-900/80 border-b border-slate-800"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <!-- Brand / Name -->
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-10 h-10 rounded-lg bg-gradient-to-tr from-amber-500 to-amber-300 flex items-center justify-center text-slate-900 font-black text-xl shadow-lg shadow-amber-500/20"
+            >
+              RS
+            </div>
+            <div>
+              <a
+                href="#hero"
+                class="text-lg font-bold text-white hover:text-amber-400 transition"
+                >Rodolfo Silva</a
+              >
+              <p class="text-xs text-amber-500 font-mono hidden sm:block">
+                AWS & Cloud Support Engineer
+              </p>
+            </div>
+          </div>
+
+          <!-- Desktop Navigation Links -->
+          <nav
+            class="hidden md:flex space-x-1 lg:space-x-4 text-sm font-medium"
+          >
+            <a
+              href="#summary"
+              class="px-3 py-2 rounded-md text-slate-300 hover:text-amber-400 hover:bg-slate-800 transition"
+              >Summary</a
+            >
+            <a
+              href="#experience"
+              class="px-3 py-2 rounded-md text-slate-300 hover:text-amber-400 hover:bg-slate-800 transition"
+              >Experience</a
+            >
+            <a
+              href="#skills"
+              class="px-3 py-2 rounded-md text-slate-300 hover:text-amber-400 hover:bg-slate-800 transition"
+              >Skills Matrix</a
+            >
+            <a
+              href="#architecture"
+              class="px-3 py-2 rounded-md text-slate-300 hover:text-amber-400 hover:bg-slate-800 transition"
+              >Tech Stack</a
+            >
+            <a
+              href="#education"
+              class="px-3 py-2 rounded-md text-slate-300 hover:text-amber-400 hover:bg-slate-800 transition"
+              >Education</a
+            >
+          </nav>
+
+          <!-- Header Quick Actions -->
+          <div class="flex items-center space-x-3">
+            <button
+              id="copy-email-btn"
+              onclick="
+                copyContactInfo('rodolfo.c.silva@outlook.com', 'Email copied!')
+              "
+              class="hidden sm:inline-flex items-center space-x-2 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 px-3 py-1.5 rounded-lg text-xs font-semibold transition"
+            >
+              <i class="fa-regular font-mono fa-copy text-amber-400"></i>
+              <span>Copy Email</span>
+            </button>
+            <a
+              href="https://linkedin.com/in/rodolfo-c-silva"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bg-blue-600 hover:bg-blue-500 text-white p-2 rounded-lg text-sm transition flex items-center justify-center"
+              title="LinkedIn Profile"
+            >
+              <i class="fa-brands fa-linkedin-in w-4 h-4 text-center"></i>
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button
+              id="mobile-menu-btn"
+              class="md:hidden p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden border-b border-slate-800 bg-slate-900 px-4 pt-2 pb-4 space-y-1"
+      >
+        <a
+          href="#summary"
+          class="block px-3 py-2 rounded-md text-slate-300 hover:text-amber-400 hover:bg-slate-800"
+          >Summary</a
+        >
+        <a
+          href="#experience"
+          class="block px-3 py-2 rounded-md text-slate-300 hover:text-amber-400 hover:bg-slate-800"
+          >Experience</a
+        >
+        <a
+          href="#skills"
+          class="block px-3 py-2 rounded-md text-slate-300 hover:text-amber-400 hover:bg-slate-800"
+          >Skills Matrix</a
+        >
+        <a
+          href="#architecture"
+          class="block px-3 py-2 rounded-md text-slate-300 hover:text-amber-400 hover:bg-slate-800"
+          >Tech Stack</a
+        >
+        <a
+          href="#education"
+          class="block px-3 py-2 rounded-md text-slate-300 hover:text-amber-400 hover:bg-slate-800"
+          >Education</a
+        >
+      </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow">
+      <!-- Hero & Profile Header -->
+      <section
+        id="hero"
+        class="relative overflow-hidden pt-12 pb-16 lg:pt-20 lg:pb-24 border-b border-slate-800/80 bg-gradient-to-b from-slate-900 via-slate-900/90 to-slate-950"
+      >
+        <!-- Background Decorative Glows -->
+        <div
+          class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"
+        ></div>
+        <div
+          class="absolute -top-12 right-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"
+        ></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <!-- Text Info Column -->
+            <div class="lg:col-span-8 space-y-6">
+              <div
+                class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold tracking-wide uppercase"
+              >
+                <span
+                  class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"
+                ></span>
+                <span>Available for Cloud / SRE / DevOps Roles</span>
+              </div>
+
+              <h1
+                class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight"
+              >
+                Rodolfo Silva
+              </h1>
+
+              <p class="text-xl sm:text-2xl font-semibold text-slate-300">
+                Cloud Support Engineer <span class="text-amber-400">|</span> AWS
+                Specialist <span class="text-amber-400">|</span> DevOps & IT
+                Infra
+              </p>
+
+              <p
+                class="text-slate-400 text-base sm:text-lg max-w-3xl leading-relaxed"
+              >
+                15+ years of operational excellence in Managed Services (MSP),
+                hybrid cloud administration, and enterprise infrastructure
+                support with high availability SLA mandates.
+              </p>
+
+              <!-- Contact Badges & Links -->
+              <div class="flex flex-wrap gap-3 pt-2">
+                <span
+                  class="inline-flex items-center px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs text-slate-300"
+                >
+                  <i class="fa-solid fa-location-dot text-amber-400 mr-2"></i>
+                  Toronto, ON, Canada
+                </span>
+                <a
+                  href="tel:+14373327803"
+                  class="inline-flex items-center px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs text-slate-300 hover:border-amber-500 transition"
+                >
+                  <i class="fa-solid fa-phone text-amber-400 mr-2"></i> +1 (437)
+                  332-7803
+                </a>
+                <a
+                  href="mailto:rodolfo.c.silva@outlook.com"
+                  class="inline-flex items-center px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs text-slate-300 hover:border-amber-500 transition"
+                >
+                  <i class="fa-solid fa-envelope text-amber-400 mr-2"></i>
+                  rodolfo.c.silva@outlook.com
+                </a>
+                <a
+                  href="https://linkedin.com/in/rodolfo-c-silva"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs text-slate-300 hover:border-blue-500 transition"
+                >
+                  <i class="fa-brands fa-linkedin text-blue-400 mr-2"></i>
+                  linkedin.com/in/rodolfo-c-silva
+                </a>
+              </div>
+
+              <!-- CTA Buttons -->
+              <div class="flex flex-wrap gap-4 pt-4">
+                <a
+                  href="mailto:rodolfo.c.silva@outlook.com"
+                  class="px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm shadow-lg shadow-amber-500/20 transition flex items-center space-x-2"
+                >
+                  <i class="fa-solid fa-paper-plane"></i>
+                  <span>Get In Touch</span>
+                </a>
+                <button
+                  onclick="window.print()"
+                  class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-sm border border-slate-700 transition flex items-center space-x-2"
+                >
+                  <i class="fa-solid fa-print text-slate-400"></i>
+                  <span>Print / Save PDF</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Highlight Metrics Widget -->
+            <div class="lg:col-span-4">
+              <div
+                class="bg-slate-800/80 backdrop-blur border border-slate-700/80 rounded-2xl p-6 shadow-2xl relative overflow-hidden"
+              >
+                <div
+                  class="absolute -right-6 -bottom-6 text-slate-700/20 text-9xl font-black pointer-events-none select-none"
+                >
+                  AWS
+                </div>
+                <h3
+                  class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4"
+                >
+                  Core Strengths
+                </h3>
+                <div class="space-y-4">
+                  <div
+                    class="flex items-center justify-between pb-3 border-b border-slate-700/60"
+                  >
+                    <span class="text-sm font-medium text-slate-300"
+                      >Experience</span
+                    >
+                    <span class="text-sm font-mono font-bold text-amber-400"
+                      >15+ Years</span
+                    >
+                  </div>
+                  <div
+                    class="flex items-center justify-between pb-3 border-b border-slate-700/60"
+                  >
+                    <span class="text-sm font-medium text-slate-300"
+                      >Cloud Platform</span
+                    >
+                    <span class="text-sm font-mono font-bold text-amber-400"
+                      >AWS / Azure</span
+                    >
+                  </div>
+                  <div
+                    class="flex items-center justify-between pb-3 border-b border-slate-700/60"
+                  >
+                    <span class="text-sm font-medium text-slate-300"
+                      >DevOps & IaC</span
+                    >
+                    <span class="text-sm font-mono font-bold text-amber-400"
+                      >Terraform / Git</span
+                    >
+                  </div>
+                  <div
+                    class="flex items-center justify-between pb-3 border-b border-slate-700/60"
+                  >
+                    <span class="text-sm font-medium text-slate-300"
+                      >Workforce Eligibility</span
+                    >
+                    <span class="text-sm font-mono font-bold text-emerald-400"
+                      >Canada Resident</span
+                    >
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm font-medium text-slate-300"
+                      >ITIL & ITSM</span
+                    >
+                    <span class="text-sm font-mono font-bold text-amber-400"
+                      >ServiceNow / SLA</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Professional Summary Section -->
+      <section
+        id="summary"
+        class="py-12 border-b border-slate-800 bg-slate-900/50"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-4xl">
+            <h2
+              class="text-2xl font-bold text-white mb-4 flex items-center space-x-3"
+            >
+              <i class="fa-solid fa-user-gear text-amber-400"></i>
+              <span>Professional Overview</span>
+            </h2>
+            <p
+              class="text-slate-300 text-base sm:text-lg leading-relaxed bg-slate-800/40 border border-slate-800 p-6 rounded-2xl"
+            >
+              Results-driven
+              <strong class="text-white"
+                >Cloud Support Engineer & IT Infrastructure Specialist</strong
+              >
+              with 15+ years of experience in Managed Services (MSP), hybrid
+              cloud administration, and enterprise infrastructure support.
+              Proven expertise in supporting production environments on
+              <strong class="text-amber-400">Amazon Web Services (AWS)</strong>,
+              specializing in core services including
+              <strong class="text-white"
+                >EC2, S3, IAM, RDS, ECS, CloudWatch, and Route 53</strong
+              >. Infrastructure as Code via Terraform, Linux/Windows system
+              administration, networking, and automation with Python and Bash.
+              Adept at cross-layer troubleshooting, root cause analysis,
+              incident management, and maintaining high availability under
+              strict SLA constraints. Background includes Canadian academic
+              experience along with CompTIA, ITIL, and AWS certifications,
+              focused on Cloud Engineering, DevOps, and Site Reliability
+              Engineering (SRE) roles.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive Career Experience Timeline -->
+      <section id="experience" class="py-16 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            class="flex flex-col md:flex-row md:items-end justify-between mb-10"
+          >
+            <div>
+              <h2
+                class="text-3xl font-bold text-white flex items-center space-x-3"
+              >
+                <i class="fa-solid fa-briefcase text-amber-400"></i>
+                <span>Professional Experience</span>
+              </h2>
+              <p class="text-slate-400 text-sm mt-1">
+                Interactive timeline of technical responsibilities and
+                enterprise impact.
+              </p>
+            </div>
+            <div class="mt-4 md:mt-0">
+              <span class="text-xs text-slate-400 font-mono"
+                >Click cards to highlight technical domains</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="space-y-8 relative before:absolute before:inset-0 before:left-4 md:before:left-1/2 before:-ml-px before:w-0.5 before:bg-slate-800"
+          >
+            <!-- Role 1: Hyland Software -->
+            <div class="relative flex items-center md:justify-between group">
+              <!-- Icon Node -->
+              <div
+                class="absolute left-4 md:left-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-amber-500 text-slate-900 flex items-center justify-center font-bold text-sm shadow-lg shadow-amber-500/20 z-10"
+              >
+                <i class="fa-solid fa-cloud"></i>
+              </div>
+
+              <!-- Content Left/Right Responsive -->
+              <div
+                class="ml-12 md:ml-0 md:w-[46%] w-full bg-slate-800/80 border border-slate-700/70 p-6 rounded-2xl hover:border-amber-500/50 transition duration-300 shadow-xl"
+              >
+                <div
+                  class="flex flex-wrap justify-between items-start gap-2 mb-2"
+                >
+                  <h3 class="text-xl font-bold text-white">
+                    Cloud Support Engineer
+                  </h3>
+                  <span
+                    class="px-2.5 py-1 rounded-md bg-amber-500/10 border border-amber-500/30 text-amber-400 font-mono text-xs font-semibold"
+                    >2025 - Present</span
+                  >
+                </div>
+                <p class="text-sm font-semibold text-slate-300 mb-3">
+                  Hyland Software <span class="text-slate-500">•</span> Canada
+                </p>
+
+                <ul
+                  class="space-y-2 text-slate-300 text-sm list-disc list-inside"
+                >
+                  <li>
+                    Provide Level 2 technical support for enterprise SaaS
+                    applications and cloud infrastructure hosted on
+                    <strong>AWS</strong>.
+                  </li>
+                  <li>
+                    Perform root cause analysis and complex troubleshooting
+                    across
+                    <strong>EC2 instances, IAM policies, VPC networking</strong
+                    >, and application layers.
+                  </li>
+                  <li>
+                    Manage incident lifecycle, service requests, and problem
+                    tickets via <strong>ServiceNow</strong> following ITIL best
+                    practices and strict SLA mandates.
+                  </li>
+                  <li>
+                    Monitor system performance and application health using
+                    <strong>AWS CloudWatch</strong>, proactively responding to
+                    alarms and outages.
+                  </li>
+                  <li>
+                    Collaborate closely with Tier 3 Cloud Engineers and DevOps
+                    teams to enhance system reliability, security, and
+                    performance.
+                  </li>
+                </ul>
+
+                <div
+                  class="mt-4 pt-3 border-t border-slate-700/60 flex flex-wrap gap-1.5"
+                >
+                  <span
+                    class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 font-mono text-xs"
+                    >AWS EC2</span
+                  >
+                  <span
+                    class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 font-mono text-xs"
+                    >IAM</span
+                  >
+                  <span
+                    class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 font-mono text-xs"
+                    >VPC</span
+                  >
+                  <span
+                    class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 font-mono text-xs"
+                    >CloudWatch</span
+                  >
+                  <span
+                    class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 font-mono text-xs"
+                    >ServiceNow</span
+                  >
+                  <span
+                    class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 font-mono text-xs"
+                    >SaaS L2</span
+                  >
+                </div>
+              </div>
+
+              <!-- Empty Column for Grid Alignment on Desktop -->
+              <div class="hidden md:block md:w-[46%]"></div>
+            </div>
+
+            <!-- Role 2: Itek Solutions -->
+            <div class="relative flex items-center md:justify-between group">
+              <!-- Icon Node -->
+              <div
+                class="absolute left-4 md:left-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-blue-500 text-slate-900 flex items-center justify-center font-bold text-sm shadow-lg shadow-blue-500/20 z-10"
+              >
+                <i class="fa-solid fa-server"></i>
+              </div>
+
+              <div class="hidden md:block md:w-[46%]"></div>
+
+              <div
+                class="ml-12 md:ml-0 md:w-[46%] w-full bg-slate-800/80 border border-slate-700/70 p-6 rounded-2xl hover:border-blue-500/50 transition duration-300 shadow-xl"
+              >
+                <div
+                  class="flex flex-wrap justify-between items-start gap-2 mb-2"
+                >
+                  <h3 class="text-xl font-bold text-white">
+                    Managed Services Specialist (MSP)
+                  </h3>
+                  <span
+                    class="px-2.5 py-1 rounded-md bg-blue-500/10 border border-blue-500/30 text-blue-400 font-mono text-xs font-semibold"
+                    >2023 - 2024</span
+                  >
+                </div>
+                <p class="text-sm font-semibold text-slate-300 mb-3">
+                  Itek Solutions <span class="text-slate-500">•</span> Canada
+                </p>
+
+                <ul
+                  class="space-y-2 text-slate-300 text-sm list-disc list-inside"
+                >
+                  <li>
+                    Delivered comprehensive Level 2/3 technical support across
+                    multi-tenant MSP environments covering cloud, hybrid
+                    infrastructure, and network security.
+                  </li>
+                  <li>
+                    Managed ticket queues and client communication via
+                    <strong>ConnectWise</strong>, consistently exceeding SLA
+                    resolution targets.
+                  </li>
+                  <li>
+                    Diagnosed and resolved complex issues involving cloud
+                    workloads, server operating systems, virtual machines, and
+                    network firewalls.
+                  </li>
+                  <li>
+                    Implemented and validated backup solutions, endpoint
+                    security controls, and disaster recovery procedures for SME
+                    clients.
+                  </li>
+                  <li>
+                    Developed technical documentation, standard operating
+                    procedures (SOPs), and operational runbooks.
+                  </li>
+                </ul>
+
+                <div
+                  class="mt-4 pt-3 border-t border-slate-700/60 flex flex-wrap gap-1.5"
+                >
+                  <span
+                    class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 font-mono text-xs"
+                    >MSP Support</span
+                  >
+                  <span
+                    class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 font-mono text-xs"
+                    >ConnectWise</span
+                  >
+                  <span
+                    class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 font-mono text-xs"
+                    >Firewalls</span
+                  >
+                  <span
+                    class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 font-mono text-xs"
+                    >Disaster Recovery</span
+                  >
+                  <span
+                    class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 font-mono text-xs"
+                    >SOPs</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Role 3: Cia Distribuidora de Motores -->
+            <div class="relative flex items-center md:justify-between group">
+              <!-- Icon Node -->
+              <div
+                class="absolute left-4 md:left-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-emerald-500 text-slate-900 flex items-center justify-center font-bold text-sm shadow-lg shadow-emerald-500/20 z-10"
+              >
+                <i class="fa-solid fa-sitemap"></i>
+              </div>
+
+              <div
+                class="ml-12 md:ml-0 md:w-[46%] w-full bg-slate-800/80 border border-slate-700/70 p-6 rounded-2xl hover:border-emerald-500/50 transition duration-300 shadow-xl"
+              >
+                <div
+                  class="flex flex-wrap justify-between items-start gap-2 mb-2"
+                >
+                  <h3 class="text-xl font-bold text-white">
+                    IT Infrastructure & Cloud Coordinator
+                  </h3>
+                  <span
+                    class="px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-xs font-semibold"
+                    >2005 - 2022</span
+                  >
+                </div>
+                <p class="text-sm font-semibold text-slate-300 mb-3">
+                  Cia Distribuidora de Motores e Componentes
+                </p>
+
+                <ul
+                  class="space-y-2 text-slate-300 text-sm list-disc list-inside"
+                >
+                  <li>
+                    Led strategic cloud migration initiatives, successfully
+                    transitioning legacy on-premises servers and applications to
+                    <strong>AWS and Azure</strong> environments.
+                  </li>
+                  <li>
+                    Managed corporate IT infrastructure, including
+                    physical/virtual servers, enterprise networking gear,
+                    storage arrays, and perimeter security.
+                  </li>
+                  <li>
+                    Implemented IT governance frameworks, access controls, and
+                    compliance policies aligned with ITIL and data privacy
+                    standards.
+                  </li>
+                  <li>
+                    Supervised Service Desk operations and Tier 1-3 support
+                    engineers, maintaining high end-user satisfaction and system
+                    uptime.
+                  </li>
+                  <li>
+                    Managed vendor relationships, cloud resource licensing,
+                    technology procurement, and annual IT infrastructure
+                    budgets.
+                  </li>
+                </ul>
+
+                <div
+                  class="mt-4 pt-3 border-t border-slate-700/60 flex flex-wrap gap-1.5"
+                >
+                  <span
+                    class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 font-mono text-xs"
+                    >Cloud Migration</span
+                  >
+                  <span
+                    class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 font-mono text-xs"
+                    >AWS & Azure</span
+                  >
+                  <span
+                    class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 font-mono text-xs"
+                    >IT Governance</span
+                  >
+                  <span
+                    class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 font-mono text-xs"
+                    >Team Leadership</span
+                  >
+                  <span
+                    class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 font-mono text-xs"
+                    >Budget Management</span
+                  >
+                </div>
+              </div>
+
+              <div class="hidden md:block md:w-[46%]"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dynamic Skills Matrix Section -->
+      <section
+        id="skills"
+        class="py-16 border-b border-slate-800 bg-slate-900/60"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-3xl font-bold text-white">
+              Technical Skills Matrix
+            </h2>
+            <p class="text-slate-400 text-sm mt-2">
+              Filter and inspect technical competencies across cloud
+              architecture, automation, systems, and ITSM.
+            </p>
+
+            <!-- Interactive Filter Tabs -->
+            <div
+              class="flex flex-wrap justify-center gap-2 mt-6"
+              id="skills-filter"
+            >
+              <button
+                onclick="filterSkills('all')"
+                class="skill-btn active px-4 py-2 rounded-xl text-xs font-semibold bg-amber-500 text-slate-950 shadow-md"
+              >
+                All Skills
+              </button>
+              <button
+                onclick="filterSkills('cloud')"
+                class="skill-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700"
+              >
+                Cloud & AWS
+              </button>
+              <button
+                onclick="filterSkills('devops')"
+                class="skill-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700"
+              >
+                DevOps & IaC
+              </button>
+              <button
+                onclick="filterSkills('sysnet')"
+                class="skill-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700"
+              >
+                Systems & Network
+              </button>
+              <button
+                onclick="filterSkills('itsm')"
+                class="skill-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700"
+              >
+                ITSM & Tools
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            id="skills-grid"
+          >
+            <!-- Skill Card 1 -->
+            <div
+              class="skill-card cloud bg-slate-800/60 border border-slate-700/80 p-5 rounded-2xl space-y-3"
+            >
+              <div class="flex justify-between items-center">
+                <span
+                  class="text-amber-400 text-lg font-bold flex items-center gap-2"
+                >
+                  <i class="fa-brands fa-aws"></i> AWS Cloud Core
+                </span>
+                <span
+                  class="text-xs font-mono bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded border border-amber-500/20"
+                  >Advanced</span
+                >
+              </div>
+              <p class="text-xs text-slate-400">
+                EC2, S3, IAM Policies, RDS Database, ECS Containers, Route 53
+                DNS, CloudWatch Alarms & VPC Networking.
+              </p>
+            </div>
+
+            <!-- Skill Card 2 -->
+            <div
+              class="skill-card devops bg-slate-800/60 border border-slate-700/80 p-5 rounded-2xl space-y-3"
+            >
+              <div class="flex justify-between items-center">
+                <span
+                  class="text-amber-400 text-lg font-bold flex items-center gap-2"
+                >
+                  <i class="fa-solid fa-code-branch"></i> Terraform & IaC
+                </span>
+                <span
+                  class="text-xs font-mono bg-blue-500/10 text-blue-400 px-2 py-0.5 rounded border border-blue-500/20"
+                  >DevOps</span
+                >
+              </div>
+              <p class="text-xs text-slate-400">
+                Infrastructure as Code using Terraform, AWS CloudFormation, Git
+                version control, and CI/CD foundations.
+              </p>
+            </div>
+
+            <!-- Skill Card 3 -->
+            <div
+              class="skill-card devops bg-slate-800/60 border border-slate-700/80 p-5 rounded-2xl space-y-3"
+            >
+              <div class="flex justify-between items-center">
+                <span
+                  class="text-amber-400 text-lg font-bold flex items-center gap-2"
+                >
+                  <i class="fa-solid fa-terminal"></i> Scripting & Automation
+                </span>
+                <span
+                  class="text-xs font-mono bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded border border-amber-500/20"
+                  >Proficient</span
+                >
+              </div>
+              <p class="text-xs text-slate-400">
+                Python, Bash scripting, Shell automation, and workflow
+                automation with N8N platform.
+              </p>
+            </div>
+
+            <!-- Skill Card 4 -->
+            <div
+              class="skill-card sysnet bg-slate-800/60 border border-slate-700/80 p-5 rounded-2xl space-y-3"
+            >
+              <div class="flex justify-between items-center">
+                <span
+                  class="text-amber-400 text-lg font-bold flex items-center gap-2"
+                >
+                  <i class="fa-brands fa-linux"></i> Linux & Windows OS
+                </span>
+                <span
+                  class="text-xs font-mono bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/20"
+                  >CompTIA Linux+</span
+                >
+              </div>
+              <p class="text-xs text-slate-400">
+                Enterprise Linux Administration (RedHat/Ubuntu), Windows Server,
+                User permissions, and OS hardening.
+              </p>
+            </div>
+
+            <!-- Skill Card 5 -->
+            <div
+              class="skill-card sysnet bg-slate-800/60 border border-slate-700/80 p-5 rounded-2xl space-y-3"
+            >
+              <div class="flex justify-between items-center">
+                <span
+                  class="text-amber-400 text-lg font-bold flex items-center gap-2"
+                >
+                  <i class="fa-solid fa-network-wired"></i> Networking &
+                  Firewalls
+                </span>
+                <span
+                  class="text-xs font-mono bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/20"
+                  >Network</span
+                >
+              </div>
+              <p class="text-xs text-slate-400">
+                TCP/IP, DNS routing, DHCP, VPN Tunnels, Fortinet Firewalls,
+                Cisco Meraki, Nmap scanning.
+              </p>
+            </div>
+
+            <!-- Skill Card 6 -->
+            <div
+              class="skill-card itsm bg-slate-800/60 border border-slate-700/80 p-5 rounded-2xl space-y-3"
+            >
+              <div class="flex justify-between items-center">
+                <span
+                  class="text-amber-400 text-lg font-bold flex items-center gap-2"
+                >
+                  <i class="fa-solid fa-headset"></i> ITSM & Incident Mgmt
+                </span>
+                <span
+                  class="text-xs font-mono bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded border border-purple-500/20"
+                  >ITIL v3</span
+                >
+              </div>
+              <p class="text-xs text-slate-400">
+                ServiceNow, ConnectWise Automate, Salesforce, Root Cause
+                Analysis (RCA), and strict SLA compliance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technical Ecosystem & Interactive Terminal Simulator -->
+      <section id="architecture" class="py-16 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <!-- Left Column: Cloud Tech Stack Info -->
+            <div class="lg:col-span-5 space-y-6">
+              <h2
+                class="text-3xl font-bold text-white flex items-center space-x-3"
+              >
+                <i class="fa-solid fa-microchip text-amber-400"></i>
+                <span>AWS & Cloud Tooling</span>
+              </h2>
+              <p class="text-slate-300 text-sm leading-relaxed">
+                A comprehensive overview of cloud infrastructure tools, database
+                engines, and operational frameworks managed across production
+                environments.
+              </p>
+
+              <div class="space-y-3">
+                <div
+                  class="p-3 rounded-xl bg-slate-800/70 border border-slate-700 flex items-center justify-between"
+                >
+                  <div class="flex items-center space-x-3">
+                    <i
+                      class="fa-brands fa-aws text-amber-400 text-xl w-6 text-center"
+                    ></i>
+                    <div>
+                      <h4 class="text-sm font-bold text-white">
+                        AWS Core Suite
+                      </h4>
+                      <p class="text-xs text-slate-400">
+                        EC2, S3, RDS, ECS, Route 53, CloudWatch, IAM
+                      </p>
+                    </div>
+                  </div>
+                  <span class="text-xs font-mono text-amber-400 font-bold"
+                    >Primary</span
+                  >
+                </div>
+
+                <div
+                  class="p-3 rounded-xl bg-slate-800/70 border border-slate-700 flex items-center justify-between"
+                >
+                  <div class="flex items-center space-x-3">
+                    <i
+                      class="fa-solid fa-database text-blue-400 text-xl w-6 text-center"
+                    ></i>
+                    <div>
+                      <h4 class="text-sm font-bold text-white">
+                        Database Technologies
+                      </h4>
+                      <p class="text-xs text-slate-400">
+                        MySQL, AWS DynamoDB, MongoDB
+                      </p>
+                    </div>
+                  </div>
+                  <span class="text-xs font-mono text-slate-400"
+                    >SQL / NoSQL</span
+                  >
+                </div>
+
+                <div
+                  class="p-3 rounded-xl bg-slate-800/70 border border-slate-700 flex items-center justify-between"
+                >
+                  <div class="flex items-center space-x-3">
+                    <i
+                      class="fa-solid fa-shield-halved text-emerald-400 text-xl w-6 text-center"
+                    ></i>
+                    <div>
+                      <h4 class="text-sm font-bold text-white">
+                        Security & Auditing
+                      </h4>
+                      <p class="text-xs text-slate-400">
+                        Nmap Scanning, IAM Role Least-Privilege, Endpoint
+                        Defense
+                      </p>
+                    </div>
+                  </div>
+                  <span class="text-xs font-mono text-emerald-400"
+                    >Hardened</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Interactive Terminal Demo -->
+            <div class="lg:col-span-7">
+              <div
+                class="bg-slate-950 border border-slate-800 rounded-2xl shadow-2xl overflow-hidden font-mono text-xs"
+              >
+                <!-- Terminal Header Bar -->
+                <div
+                  class="bg-slate-900 px-4 py-3 border-b border-slate-800 flex items-center justify-between"
+                >
+                  <div class="flex items-center space-x-2">
+                    <div class="w-3 h-3 rounded-full bg-rose-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                    <span class="text-slate-400 text-xs ml-2 font-mono"
+                      >rodolfo-silva-cloud-cli ~ bash</span
+                    >
+                  </div>
+                  <span class="text-slate-500 text-xs">AWS CLI v2.15</span>
+                </div>
+
+                <!-- Terminal Content Window -->
+                <div class="p-5 space-y-4 text-slate-300 min-h-[300px]">
+                  <div>
+                    <span class="text-emerald-400">rodolfo@toronto-node</span
+                    >:<span class="text-blue-400">~</span>$ aws sts
+                    get-caller-identity
+                    <pre class="text-slate-400 mt-1">
+{
+  "UserId": "AROA15YEARSCLOUDSUPPORT",
+  "Account": "123456789012",
+  "Arn": "arn:aws:iam::123456789012:user/Rodolfo_Silva"
+}</pre
+                    >
+                  </div>
+
+                  <div>
+                    <span class="text-emerald-400">rodolfo@toronto-node</span
+                    >:<span class="text-blue-400">~</span>$ terraform plan
+                    --target=module.cloud_support_infrastructure
+                    <p class="text-amber-400 mt-1">
+                      # Refreshing Terraform state...
+                    </p>
+                    <p class="text-emerald-400">
+                      Plan: 3 to add, 0 to change, 0 to destroy.
+                    </p>
+                    <p class="text-slate-400">
+                      + aws_ec2_instance (Level 2 Enterprise SaaS Engine)
+                    </p>
+                    <p class="text-slate-400">
+                      + aws_cloudwatch_metric_alarm (SLA 99.9% Uptime)
+                    </p>
+                    <p class="text-slate-400">
+                      + aws_iam_policy (Zero Trust Security Standard)
+                    </p>
+                  </div>
+
+                  <div
+                    id="terminal-interactive-output"
+                    class="text-amber-300"
+                  ></div>
+
+                  <!-- Dynamic CLI Buttons -->
+                  <div
+                    class="pt-4 border-t border-slate-800 flex flex-wrap gap-2"
+                  >
+                    <button
+                      onclick="runCliCommand('status')"
+                      class="px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition font-mono"
+                    >
+                      > rodolfo --status
+                    </button>
+                    <button
+                      onclick="runCliCommand('certs')"
+                      class="px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition font-mono"
+                    >
+                      > rodolfo --certs
+                    </button>
+                    <button
+                      onclick="runCliCommand('languages')"
+                      class="px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition font-mono"
+                    >
+                      > rodolfo --languages
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education & Certifications Section -->
+      <section
+        id="education"
+        class="py-16 border-b border-slate-800 bg-slate-900/50"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <!-- Certifications Column -->
+            <div>
+              <h2
+                class="text-2xl font-bold text-white mb-6 flex items-center space-x-3"
+              >
+                <i class="fa-solid fa-certificate text-amber-400"></i>
+                <span>Industry Certifications</span>
+              </h2>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Cert 1 -->
+                <div
+                  class="bg-slate-800/80 border border-slate-700 p-4 rounded-xl flex items-center space-x-4 hover:border-amber-500/50 transition"
+                >
+                  <div
+                    class="w-12 h-12 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-xl font-bold"
+                  >
+                    <i class="fa-brands fa-aws"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-sm font-bold text-white">AWS Certified</h4>
+                    <p class="text-xs text-slate-400">Amazon Web Services</p>
+                  </div>
+                </div>
+
+                <!-- Cert 2 -->
+                <div
+                  class="bg-slate-800/80 border border-slate-700 p-4 rounded-xl flex items-center space-x-4 hover:border-amber-500/50 transition"
+                >
+                  <div
+                    class="w-12 h-12 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl font-bold"
+                  >
+                    <i class="fa-brands fa-linux"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-sm font-bold text-white">CompTIA Linux+</h4>
+                    <p class="text-xs text-slate-400">Linux System Admin</p>
+                  </div>
+                </div>
+
+                <!-- Cert 3 -->
+                <div
+                  class="bg-slate-800/80 border border-slate-700 p-4 rounded-xl flex items-center space-x-4 hover:border-amber-500/50 transition"
+                >
+                  <div
+                    class="w-12 h-12 rounded-lg bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xl font-bold"
+                  >
+                    <i class="fa-solid fa-wrench"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-sm font-bold text-white">CompTIA A+</h4>
+                    <p class="text-xs text-slate-400">Hardware & Systems</p>
+                  </div>
+                </div>
+
+                <!-- Cert 4 -->
+                <div
+                  class="bg-slate-800/80 border border-slate-700 p-4 rounded-xl flex items-center space-x-4 hover:border-amber-500/50 transition"
+                >
+                  <div
+                    class="w-12 h-12 rounded-lg bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 text-xl font-bold"
+                  >
+                    <i class="fa-solid fa-clipboard-check"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-sm font-bold text-white">
+                      ITIL v3 Foundation
+                    </h4>
+                    <p class="text-xs text-slate-400">IT Service Management</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Languages Card -->
+              <div
+                class="mt-6 bg-slate-800/60 border border-slate-700 p-5 rounded-xl space-y-3"
+              >
+                <h4
+                  class="text-sm font-bold text-white flex items-center space-x-2"
+                >
+                  <i class="fa-solid fa-language text-amber-400"></i>
+                  <span>Languages</span>
+                </h4>
+                <div class="grid grid-cols-2 gap-4 text-xs">
+                  <div
+                    class="p-2.5 rounded bg-slate-900 border border-slate-800"
+                  >
+                    <p class="font-bold text-slate-200">English</p>
+                    <p class="text-slate-400 mt-0.5">
+                      Professional Working Proficiency
+                    </p>
+                    <p class="text-[10px] text-amber-400/80 mt-1">
+                      (Canadian Academic & Work Exp.)
+                    </p>
+                  </div>
+                  <div
+                    class="p-2.5 rounded bg-slate-900 border border-slate-800"
+                  >
+                    <p class="font-bold text-slate-200">Portuguese</p>
+                    <p class="text-slate-400 mt-0.5">Native</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Academic Education Column -->
+            <div>
+              <h2
+                class="text-2xl font-bold text-white mb-6 flex items-center space-x-3"
+              >
+                <i class="fa-solid fa-graduation-cap text-amber-400"></i>
+                <span>Academic Education</span>
+              </h2>
+
+              <div class="space-y-4">
+                <!-- Edu 1 -->
+                <div
+                  class="bg-slate-800/80 border border-slate-700 p-5 rounded-2xl relative"
+                >
+                  <span
+                    class="absolute top-4 right-4 text-xs font-mono bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2 py-0.5 rounded"
+                    >Canada</span
+                  >
+                  <h3 class="text-base font-bold text-white">
+                    Diploma in Computer Programming
+                  </h3>
+                  <p class="text-sm font-medium text-slate-300">
+                    Georgian College
+                  </p>
+                  <p class="text-xs text-slate-400 mt-1">Toronto, ON, Canada</p>
+                </div>
+
+                <!-- Edu 2 -->
+                <div
+                  class="bg-slate-800/80 border border-slate-700 p-5 rounded-2xl"
+                >
+                  <h3 class="text-base font-bold text-white">
+                    Postgraduate Certificate in Information Security
+                  </h3>
+                  <p class="text-sm font-medium text-slate-300">
+                    Universidade Anhembi Morumbi
+                  </p>
+                </div>
+
+                <!-- Edu 3 -->
+                <div
+                  class="bg-slate-800/80 border border-slate-700 p-5 rounded-2xl"
+                >
+                  <h3 class="text-base font-bold text-white">
+                    Postgraduate Certificate in IT Management
+                  </h3>
+                  <p class="text-sm font-medium text-slate-300">SENAC</p>
+                </div>
+
+                <!-- Edu 4 -->
+                <div
+                  class="bg-slate-800/80 border border-slate-700 p-5 rounded-2xl"
+                >
+                  <h3 class="text-base font-bold text-white">
+                    Bachelor's Degree in Information Systems
+                  </h3>
+                  <p class="text-sm font-medium text-slate-300">UNIBAN</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="bg-slate-950 border-t border-slate-800 py-8 text-center text-xs text-slate-500"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-3">
+        <p>
+          © Rodolfo Silva. All rights reserved. Cloud Support Engineer & IT
+          Specialist based in Toronto, Canada.
+        </p>
+        <div class="flex justify-center space-x-4 text-slate-400">
+          <a
+            href="mailto:rodolfo.c.silva@outlook.com"
+            class="hover:text-amber-400 transition"
+            >Email</a
+          >
+          <span>•</span>
+          <a
+            href="https://linkedin.com/in/rodolfo-c-silva"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-amber-400 transition"
+            >LinkedIn</a
+          >
+          <span>•</span>
+          <a href="tel:+14373327803" class="hover:text-amber-400 transition"
+            >Phone</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <!-- Interactive JavaScript Logic -->
+    <script>
+      // Skills filtering feature
+      function filterSkills(category) {
+        const cards = document.querySelectorAll('.skill-card');
+        const buttons = document.querySelectorAll('.skill-btn');
+
+        buttons.forEach((btn) => {
+          btn.classList.remove('bg-amber-500', 'text-slate-950');
+          btn.classList.add('bg-slate-800', 'text-slate-300');
+        });
+
+        event.target.classList.remove('bg-slate-800', 'text-slate-300');
+        event.target.classList.add('bg-amber-500', 'text-slate-950');
+
+        cards.forEach((card) => {
+          if (category === 'all' || card.classList.contains(category)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+
+      // Copy email alert feedback
+      function copyContactInfo(text, message) {
+        const tempInput = document.createElement('input');
+        tempInput.value = text;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+
+        const btn = document.getElementById('copy-email-btn');
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = `<i class="fa-solid fa-check text-emerald-400"></i><span class="text-emerald-400">Copied!</span>`;
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+        }, 2000);
+      }
+
+      // Terminal CLI Simulator
+      function runCliCommand(cmd) {
+        const output = document.getElementById('terminal-interactive-output');
+        if (cmd === 'status') {
+          output.innerHTML = `> rodolfo --status<br><span class="text-emerald-400">[OK] Currently based in Toronto, ON, CA. Actively interviewing for Cloud Engineering & SRE positions.</span>`;
+        } else if (cmd === 'certs') {
+          output.innerHTML = `> rodolfo --certs<br><span class="text-slate-300">• AWS Certified<br>• CompTIA Linux+<br>• CompTIA A+<br>• ITIL v3 Foundation</span>`;
+        } else if (cmd === 'languages') {
+          output.innerHTML = `> rodolfo --languages<br><span class="text-slate-300">• English: Professional Working Proficiency<br>• Portuguese: Native</span>`;
+        }
+      }
+
+      // Mobile Menu Toggle
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>
